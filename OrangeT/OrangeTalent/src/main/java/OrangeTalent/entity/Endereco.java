@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Endereco {
@@ -15,8 +16,8 @@ public class Endereco {
 	
 	@NotBlank
 	private String logradouro;
-	@NotBlank
-	private int numero;
+	@NotNull
+	private long numero;
 	@NotBlank
 	private String complemento;
 	@NotBlank
@@ -61,11 +62,11 @@ public class Endereco {
 		this.logradouro = logradouro;
 	}
 
-	public int getNumero() {
+	public long getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(long numero) {
 		this.numero = numero;
 	}
 

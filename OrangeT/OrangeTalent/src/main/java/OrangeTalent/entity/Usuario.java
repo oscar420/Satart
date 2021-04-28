@@ -15,13 +15,11 @@ import org.hibernate.validator.constraints.br.CPF;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue
 	@NotBlank
 	@Email
 	private  String email;		
 	
 	@Id
-	@GeneratedValue
 	@NotBlank
 	@CPF
 	private  String cpf;
@@ -44,11 +42,9 @@ public class Usuario {
 
 
 
-	public Usuario( String nome, String dataDeNascimento) {
+	public Usuario(String nome, String dataDeNascimento) {
 		super();
 		this.nome = nome;
-		this.email = email;
-		this.cpf = cpf;
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
