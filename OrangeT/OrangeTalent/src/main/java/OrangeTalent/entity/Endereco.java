@@ -7,12 +7,18 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 public class Endereco {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@NotBlank
+	@CPF
+	private  String cpf;
 	
 	@NotBlank
 	private String logradouro;
@@ -34,9 +40,10 @@ public class Endereco {
 	}
 
 	public Endereco(long id, String logradouro, int numero, String complemento, String bairro, String cidade,
-			String estado, String cep) {
+			String estado, String cep, String cpf) {
 		super();
 		this.id = id;
+		this.cpf = cpf;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
@@ -44,6 +51,14 @@ public class Endereco {
 		this.cidade = cidade;
 		this.estado = estado;
 		this.cep = cep;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public long getId() {
